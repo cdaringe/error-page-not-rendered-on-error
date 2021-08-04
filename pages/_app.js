@@ -1,7 +1,10 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  throw new Error("whoops, i have a bug"); // simulate an unintended bug
+  return <Component {...pageProps} />;
 }
 
-export default MyApp
+MyApp.getInitialProps = () => ({ ok: true });
+
+export default MyApp;
